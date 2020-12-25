@@ -34,19 +34,19 @@ pseudocode:
 
 // 0(n) time | O(n) space - where n is the length of the input array
 function twoNumberSum(array, targetSum) {
-	let result = [];
-	let hashTable = {};
+  let result = [];
+  let hashTable = {};
 
-	for (const ele of array) {
-		let difference = targetSum - ele;
-		if (ele in hashTable) {
-			result.push(ele, difference);
-		} else {
-			hashTable[difference] = 1;
-		}
-	}
+  for (const ele of array) {
+    let difference = targetSum - ele;
+    if (ele in hashTable) {
+      result.push(ele, difference);
+    } else {
+      hashTable[difference] = 1;
+    }
+  }
 
-	return result;
+  return result;
 }
 
 // TEST CASES
