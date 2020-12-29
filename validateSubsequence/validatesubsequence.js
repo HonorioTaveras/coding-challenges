@@ -33,35 +33,58 @@ pseudocode:
 
 // O(n) time | O(1) space - where n is the length of the array
 function isValidSubsequence(array, sequence) {
-	let result = [];
-	// let i = 0;
-	let j = 0;
+  let result = [];
+  // let i = 0;
+  let j = 0;
 
-	if (sequence.length > array.length) {
-		return false;
-	}
+  if (sequence.length > array.length) {
+    return false;
+  }
 
-	for (let i = 0; i < array.length; i += 1) {
-		if (j === sequence.length) {
-			break;
-		}
-		if (array[i] === sequence[j]) {
-			result.push(array[i]);
-			j += 1;
-		}
-	}
+  for (let i = 0; i < array.length; i += 1) {
+    if (j === sequence.length) {
+      break;
+    }
+    if (array[i] === sequence[j]) {
+      result.push(array[i]);
+      j += 1;
+    }
+  }
 
-	return result.length === sequence.length;
+  return result.length === sequence.length;
 }
 
 // TEST CASES
-console.log(isValidSubsequence([5, 1, 22, 25, 6, -1, 8, 10], [1, 6, -1, 10]));  // T
-console.log(isValidSubsequence([5, 1, 22, 25, 6, -1, 8, 10], [5, 1, 22, 25, 6, -1, 8, 10])); // T
-console.log(isValidSubsequence([5, 1, 22, 25, 6, -1, 8, 10], [5, 1, 22, 6, -1, 8, 10])); // T
+console.log(isValidSubsequence([5, 1, 22, 25, 6, -1, 8, 10], [1, 6, -1, 10])); // T
+console.log(
+  isValidSubsequence([5, 1, 22, 25, 6, -1, 8, 10], [5, 1, 22, 25, 6, -1, 8, 10])
+); // T
+console.log(
+  isValidSubsequence([5, 1, 22, 25, 6, -1, 8, 10], [5, 1, 22, 6, -1, 8, 10])
+); // T
 console.log(isValidSubsequence([5, 1, 22, 25, 6, -1, 8, 10], [22, 25, 6])); // T
 console.log(isValidSubsequence([5, 1, 22, 25, 6, -1, 8, 10], [1, 6, 10])); // T
-console.log(isValidSubsequence([5, 1, 22, 25, 6, -1, 8, 10], [5, 1, 22, 25, 6, -1, 8, 10, 12])); // F
-console.log(isValidSubsequence([5, 1, 22, 25, 6, -1, 8, 10], [4, 5, 1, 22, 25, 6, -1, 8, 10])); // F
-console.log(isValidSubsequence([5, 1, 22, 25, 6, -1, 8, 10], [5, 1, 22, 23, 6, -1, 8, 10])); // F
-console.log(isValidSubsequence([5, 1, 22, 25, 6, -1, 8, 10], [5, 1, 22, 22, 25, 6, -1, 8, 10])); // F
-console.log(isValidSubsequence([5, 1, 22, 25, 6, -1, 8, 10], [5, 1, 22, 22, 6, -1, 8, 10])); // F
+console.log(
+  isValidSubsequence(
+    [5, 1, 22, 25, 6, -1, 8, 10],
+    [5, 1, 22, 25, 6, -1, 8, 10, 12]
+  )
+); // F
+console.log(
+  isValidSubsequence(
+    [5, 1, 22, 25, 6, -1, 8, 10],
+    [4, 5, 1, 22, 25, 6, -1, 8, 10]
+  )
+); // F
+console.log(
+  isValidSubsequence([5, 1, 22, 25, 6, -1, 8, 10], [5, 1, 22, 23, 6, -1, 8, 10])
+); // F
+console.log(
+  isValidSubsequence(
+    [5, 1, 22, 25, 6, -1, 8, 10],
+    [5, 1, 22, 22, 25, 6, -1, 8, 10]
+  )
+); // F
+console.log(
+  isValidSubsequence([5, 1, 22, 25, 6, -1, 8, 10], [5, 1, 22, 22, 6, -1, 8, 10])
+); // F
