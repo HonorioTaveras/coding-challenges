@@ -37,21 +37,21 @@ function findClosestValueInBst(tree, target) {
 }
 
 function findClosestValueInBstHelper(tree, target, closest) {
-	if (!tree) {
-		return closest;
-	}
+  if (!tree) {
+    return closest;
+  }
 
-	if (Math.abs(target - tree.value) < Math.abs(target - closest)) {
-		closest = tree.value;
-	}
+  if (Math.abs(target - tree.value) < Math.abs(target - closest)) {
+    closest = tree.value;
+  }
 
-	if (target < tree.value) {
-		return findClosestValueInBstHelper(tree.left, target, closest);
-	} else if (target > tree.value) {
-		return findClosestValueInBstHelper(tree.right, target, closest);
-	} else {
-		return closest;
-	}
+  if (target < tree.value) {
+    return findClosestValueInBstHelper(tree.left, target, closest);
+  } else if (target > tree.value) {
+    return findClosestValueInBstHelper(tree.right, target, closest);
+  } else {
+    return closest;
+  }
 }
 
 // This is the class of the input tree. Do not edit.
