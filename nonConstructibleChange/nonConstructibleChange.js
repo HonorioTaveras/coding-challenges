@@ -8,6 +8,7 @@
 // Sample Output
 // 20
 
+// O(nLog(n)) time | O(1) space - where n is the length of the input array
 function nonConstructibleChange(coins) {
   coins.sort((a, b) => a - b);
 
